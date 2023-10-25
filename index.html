@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="card">
+        <div class="card-header">
+            <input class="out" type="text" id="result" maxlength="20">
+            <input type="button"  style="background-color: #FC0067;" class="btn" value="C" onclick="clr()">
+        </div>
+        <div class="card-2">
+            <input type="button" class="btn" onclick="button('1')" value="1">
+            <input type="button" class="btn" onclick="button('2')" value="2">
+            <input type="button" class="btn" onclick="button('3')" value="3">
+            <input type="button" class="btn" onclick="button('/')" value="/">
+        </div>
+        <br/>
+        <div class="card-3">
+            <input type="button" class="btn" onclick="button('4')" value="4">
+            <input type="button" class="btn" onclick="button('5')" value="5">
+            <input type="button" class="btn" onclick="button('6')" value="6">
+            <input type="button" class="btn" onclick="button('-')" value="-">
+        </div>
+        <br/>
+        <div class="card-4">
+            <input type="button" class="btn" onclick="button('7')" value="7">
+            <input type="button" class="btn" onclick="button('8')" value="8">
+            <input type="button" class="btn" onclick="button('9')" value="9">
+            <input type="button" class="btn" onclick="button('+')" value="+">
+        </div>
+        <br/>
+        <div class="card-5">
+            <input type="button" class="btn" onclick="button('.')" value=".">
+            <input type="button" class="btn" onclick="button('0')" value="0">
+            <input type="button" class="btn" onclick="button('%')" value="%">
+            <input type="button" class="btn"onclick="button('*')" value="*">
+        </div>
+        <br>
+        <div class="card-6">
+            <input type="button" class="btn" onclick="button('$')" value="$">
+            <input type="button" class="btn" onclick="button('^')"style="^" value="!">
+            <input type="button" class="btn" onclick="button(',')" value=",">
+            <input type="button" class="btn" onclick="calcalculation()"style="background-color:#FC0067 ;" value="=">
+        </div>
+    </div>
+
+<script>
+    function button(number){
+        var result =document.getElementById('result');
+        result.value+=number;
+    }
+    function calcalculation(){
+        var calcalculation = document.getElementById("result").value;
+        var evall = eval(calcalculation);
+        document.getElementById('result').value =evall;
+
+    }
+    function clr(){
+        document.getElementById("result").value="";
+    }
+</script>
+
+</body>
+</html>
+
